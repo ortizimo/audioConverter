@@ -1,0 +1,28 @@
+#!/bin/bash
+# author: Saulo Sal Ortiz
+# date: 2026.01.28
+# name: audioConverter
+# version: 1.0
+# desc: to convert .mp4 video to .mp3 audio
+# use: to prevent Pixel malware when analyzing extracted videos
+# note: you must have ffmpeg and libpm3lame installed for this script to work
+
+#-------------------
+# CODE START
+#-------------------
+# create an output directory if one doesn't exist
+mkdir -p audioConverter
+
+# loop thourhg all MP4 files in the currecnt directory
+for file in *.mp4; do
+	# extract the filename without the extension
+	filename=$(basename "$file" .mp4)
+	
+	# run the mmpeg command to convert to MP3
+	ffmpeg -i "$file" -vn -acodec libmp3lame -q:a 0 "./audioConverter/${filename}.mp3"
+done
+
+echo "Convertion completed! Files are saved in the 'audioConverter' directory."
+
+
+
