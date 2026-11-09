@@ -1,2 +1,4 @@
 # audioConverter
-converts .mp4 video to .mp3 audio to prevent Pixel malware when analyzing extracted videos
+converts .mp4 video to .mp3 audio to prevent Pixel malware when analyzing extracted videos.
+note: you must have ffmpeg and libpm3lame installed for this script to work
+
